@@ -866,7 +866,7 @@ function ShiraHub:Window(GuiConfig)
         end)
     end)
 
-    local ToggleKey = Enum.KeyCode.F3
+    local ToggleKey = GuiConfig.Keybind or Enum.KeyCode.K
     UserInputService.InputBegan:Connect(function(input, gpe)
         if gpe then return end
         if input.KeyCode == ToggleKey then
@@ -882,17 +882,30 @@ function ShiraHub:Window(GuiConfig)
         ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
         ScreenGui.Name = "ToggleUIButton"
 
-        local MainButton = Instance.new("ImageLabel")
+        local MainButton = Instance.new("Frame")
         MainButton.Parent = ScreenGui
         MainButton.Size = UDim2.new(0, 40, 0, 40)
-        MainButton.Position = UDim2.new(0, 20, 0, 100)
-        MainButton.BackgroundTransparency = 1
-        MainButton.Image = "rbxassetid://" .. GuiConfig.Image
-        MainButton.ScaleType = Enum.ScaleType.Fit
+        MainButton.Position = UDim2.new(0, 40, 0, 100)
+        MainButton.BackgroundColor3 = GuiConfig.Color or Color3.fromRGB(0, 0, 0)
+        MainButton.BorderSizePixel = 0
 
         local UICorner = Instance.new("UICorner")
-        UICorner.CornerRadius = UDim.new(0, 6)
+        UICorner.CornerRadius = UDim.new(1, 0)
         UICorner.Parent = MainButton
+
+        local UIStroke = Instance.new("UIStroke")
+        UIStroke.Parent = MainButton
+        UIStroke.Color = Color3.fromRGB(255, 255, 255)
+        UIStroke.Thickness = 1.5
+        
+        local ShText = Instance.new("TextLabel")
+        ShText.Parent = MainButton
+        ShText.BackgroundTransparency = 1
+        ShText.Size = UDim2.new(1, 0, 1, 0)
+        ShText.Text = "SH"
+        ShText.Font = Enum.Font.GothamBold
+        ShText.TextColor3 = Color3.fromRGB(255, 255, 255)
+        ShText.TextSize = 20
 
         local Button = Instance.new("TextButton")
         Button.Parent = MainButton
