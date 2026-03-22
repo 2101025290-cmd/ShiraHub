@@ -460,7 +460,7 @@ function ShiraHub:MakeNotify(NotifyConfig)
     return NotifyFunction
 end
 
-function rcchub(msg, delay, color, title, desc)
+function shirahub(msg, delay, color, title, desc)
     return ShiraHub:MakeNotify({
         Title = title or "ShiraHub",
         Description = desc or "Notification",
@@ -474,7 +474,7 @@ function ShiraHub:Window(GuiConfig)
     GuiConfig              = GuiConfig or {}
     GuiConfig.Title        = GuiConfig.Title or "ShiraHub"
     GuiConfig.Footer       = GuiConfig.Footer or "ShiraHub <3"
-    GuiConfig.Color        = GuiConfig.Color or Color3.fromRGB(0, 0, 0)
+    GuiConfig.Color        = GuiConfig.Color or Color3.fromRGB(255, 0, 255)
     GuiConfig["Tab Width"] = GuiConfig["Tab Width"] or 120
     GuiConfig.Version      = GuiConfig.Version or 1
 
