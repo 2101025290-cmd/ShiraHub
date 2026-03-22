@@ -1,0 +1,1 @@
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/2101025290-cmd/ShiraHub/refs/heads/main/SP",true))()
