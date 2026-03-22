@@ -866,10 +866,11 @@ function ShiraHub:Window(GuiConfig)
         end)
     end)
 
-    local ToggleKey = GuiConfig.Keybind or Enum.KeyCode.K
+    local InitToggleKey = GuiConfig.Keybind or Enum.KeyCode.K
+    getgenv().ShiraHub_Keybind = InitToggleKey
     UserInputService.InputBegan:Connect(function(input, gpe)
         if gpe then return end
-        if input.KeyCode == ToggleKey then
+        if input.KeyCode == (getgenv().ShiraHub_Keybind or InitToggleKey) then
             if DropShadowHolder then
                 DropShadowHolder.Visible = not DropShadowHolder.Visible
             end
