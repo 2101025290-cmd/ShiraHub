@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://vss.pandadevelopment.net/virtual/file/54b3eb32dc2a47b1"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/2101025290-cmd/ShiraHub/refs/heads/main/SP"))()
